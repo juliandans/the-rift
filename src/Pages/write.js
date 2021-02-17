@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import { Heading, Text, Container, Center, Link, Textarea } from '@chakra-ui/react';
-import { Redirect } from "react-router-dom"
+import { useQuill } from "react-quilljs";
+import { Redirect } from "react-router-dom" 
+import 'quill/dist/quill.snow.css';
 
 export default function Write(props) {
-  var [text, edittext] = useState();
+  const { quill, quillRef } = useQuill();
   return (
     <Container>
       <Center>
@@ -11,8 +13,9 @@ export default function Write(props) {
       </Center>
       <Text as="p">Chapter: {props.old}</Text>
       <Text as="p">New Chapter: {props.newch}</Text>
-      <Textarea onChange={msg => edittext(msg.target.value.replace(/\ /gm, '&nbsp;'))}>{text}</Textarea>
-      <Text>{text}</Text>
+      <div ref={quillRef} />
+      {quill && console.log(quill.getText())}
+      {/* paste html, regex out <script> */}
     </Container>
   );
 }
