@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, Flex, Spacer } from '@chakra-ui/react';
 import { BrowserRouter, Switch, Route, useParams } from "react-router-dom"
 import Home from "./Pages/home"
 import Fof from "./Pages/404"
@@ -11,7 +11,10 @@ import { ColorModeSwitcher } from './ColorModeSwitcher';
 export default function App() {
   return (
     <ChakraProvider>
-      <ColorModeSwitcher justifySelf="flex-end" /> {/* Dark Mode/Light Mode */}
+      <Flex justify="right">
+        <Spacer />
+        <ColorModeSwitcher /> {/* Dark Mode/Light Mode */}
+      </Flex>
       <BrowserRouter>
         <Switch>
           <Route exact path="/">

@@ -5,7 +5,7 @@ import { ColorModeScript } from '@chakra-ui/react';
 
 ReactDOM.render(
     (<>
-      <ColorModeScript />
+      <ColorModeScript/>
       <App />
     </>),
   document.getElementById('root')
