@@ -5,7 +5,31 @@ import { Redirect } from "react-router-dom"
 import 'quill/dist/quill.snow.css';
 
 export default function Write(props) {
-  const { quill, quillRef } = useQuill();
+  const theme = 'snow';
+  // const theme = 'bubble';
+ 
+  const modules = {
+    toolbar: [
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ align: [] }],
+  
+      [{ list: 'ordered'}, { list: 'bullet' }],
+      [{ indent: '-1'}, { indent: '+1' }],
+  
+      [{ size: ['small', false, 'large', 'huge'] }],
+      ['clean'],
+    ],
+  };
+
+ 
+  const formats = [  'bold', 'italic', 'underline', 'strike',
+  'align', 'list', 'indent',
+  'size',
+  'link', 'image', 'video',
+  'clean',];
+ 
+  const { quill, quillRef } = useQuill({ theme, modules, formats });
+ 
   const [ text, changetext ] = useState("");
 
   useEffect(()=>{
