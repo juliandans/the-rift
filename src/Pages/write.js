@@ -5,9 +5,7 @@ import { Redirect } from "react-router-dom"
 import 'quill/dist/quill.snow.css';
 
 export default function Write(props) {
-  const theme = 'snow';
-  // const theme = 'bubble';
- 
+  const theme = 'snow'; 
   const modules = {
     toolbar: [
       ['bold', 'italic', 'underline', 'strike'],
@@ -54,3 +52,7 @@ export default function Write(props) {
     </Container>
   );
 }
+
+// xhttp.open("POST", "demo_post2.asp", true);
+// xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+// xhttp.send("fname=Henry&lname=Ford");
