@@ -7,11 +7,12 @@ import Story from "./Pages/story"
 import Write from "./Pages/write"
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import Login from "./Pages/login"
-
-
+import { CurrentUserProvider } from './state/currentUser'
 
 export default function App() {
   return (
+    <CurrentUserProvider>
+
     <ChakraProvider>
       <Flex justify="right">
         <Spacer />
@@ -37,6 +38,8 @@ export default function App() {
         </Switch>
       </BrowserRouter>
     </ChakraProvider>
+    </CurrentUserProvider>
+
   );
 }
 
