@@ -6,6 +6,8 @@ import Fof from "./Pages/404"
 import Story from "./Pages/story"
 import Write from "./Pages/write"
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+import Login from "./Pages/login"
+
 
 
 export default function App() {
@@ -25,6 +27,9 @@ export default function App() {
           </Route>
           <Route path="/write/:chapter/:newchapid">
             <ProcessedWrite />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
           <Route path="*">
             <Fof />
